@@ -6,7 +6,7 @@ export default async function clientes(req, res) {
     switch(req.method){
         case 'POST':
             const {user, password} = req.body
-            const userData = await db.collection('users').find({user, password}).toArray();
+            const userData = await db.collection('users').findOne({user, password});
             res.json({ status: 200, data: userData });
             break;
     }

@@ -24,10 +24,11 @@ export const UserProvider = ({ children }) => {
             }
             throw new Error("Login inválido.");
         }).then((userData) => {
-            if (!userData.data.length) {
+            console.log(userData)
+            if (!userData.data) {
                 throw new Error("Senha ou usuário inválido.");
             }
-            setUser(userData);
+            setUser(userData.data);
             router.push("/");
         }).catch((error) => {
             toast.error(error.message, {

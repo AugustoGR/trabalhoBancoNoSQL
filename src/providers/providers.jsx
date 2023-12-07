@@ -1,5 +1,5 @@
 import { ThemeProvider } from '@mui/material/styles';
-import { UserProvider } from "../context/useUserContext";
+import { UserProvider } from "@/contexts/useUserContext";
 import theme from "@/theme";
 
 export const Providers = ({children}) => {
