@@ -59,7 +59,7 @@ export default function Home() {
   }
 
   const handleDelete = async (id) => {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE}/api/client?id=${id}`, {
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE}/client?id=${id}`, {
       method: 'DELETE',
       headers: {
         'Content-Type': 'application/json',
@@ -73,7 +73,7 @@ export default function Home() {
   }
 
   async function getClients() {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE}/api/client`, {headers: {user: user?._id}});
+    const response = await fetch(`${process.env.NEXT_PUBLIC_BASE}/client`, {headers: {user: user?._id}});
     const data = await response.json();
     setClients(data.data);
     console.log(data.data);
