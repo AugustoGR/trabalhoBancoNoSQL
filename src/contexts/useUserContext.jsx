@@ -11,7 +11,7 @@ export const UserProvider = ({ children }) => {
     
     const login = useCallback(async (user, password) => {
 
-        fetch("http://localhost:3000/api/login", {
+        fetch(`${process.env.NEXT_PUBLIC_BASE}/api/login`, {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

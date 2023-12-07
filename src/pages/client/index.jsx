@@ -17,7 +17,7 @@ export default function Client(props) {
     useEffect(() => {
       if (router.query.id) {
         console.log(router.query.id)
-        fetch(`http://localhost:3000/api/client?id=${router.query.id}`)
+        fetch(`${process.env.NEXT_PUBLIC_BASE}/api/client?id=${router.query.id}`)
           .then((response) => response.json())
           .then(({ data }) => {
             console.log(data)
@@ -35,7 +35,7 @@ export default function Client(props) {
     async function handleSave() {
       try {
         console.log('teste', user)
-        const response = await fetch(`http://localhost:3000/api/client${router.query.id ? '?id='+router.query.id : ''}`, {
+        const response = await fetch(`${process.env.NEXT_PUBLIC_BASE}/api/client${router.query.id ? '?id='+router.query.id : ''}`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',
